@@ -1,3 +1,4 @@
+import Istate from "@/component/Istate";
 import IProps from "@/component/props";
 
 
@@ -8,6 +9,7 @@ export default function Home() {
       <IProps name={"test2"} />
       <IProps name={"test3"} />
       <IProps name={"test4"} />
+      <Istate />
     </main>
   );
 }
