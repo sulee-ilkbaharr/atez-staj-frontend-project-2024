@@ -1,6 +1,6 @@
 "use client";
 
-import Signup from "@/app/signup/page";
+
 import Link from "next/link";
 import SignupContainer from "./signup";
 

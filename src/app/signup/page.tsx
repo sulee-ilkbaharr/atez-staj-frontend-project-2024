@@ -1,12 +1,9 @@
 import SignupContainer from "@/component/signup";
 
-const Signup = () => {
-  return (
-    <main>
-      Signup
-      <SignupContainer />
-
-    </main>
-  );
+const Signup=()=>{
+    return(
+        <main>
+            <SignupContainer/>
+        </main>
+    );
 }
-export default Signup;

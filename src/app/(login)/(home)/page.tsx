@@ -2,8 +2,9 @@
 
 import CustomButton from "@/component/button";
 import HomePageContainer from "@/component/homePageContainer";
+import MyProductCard from "@/component/MyProductCard";
 import ProductCard from "@/component/productCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PRODUCTS = [
   {
@@ -50,8 +51,58 @@ const PRODUCTS = [
   },
 ];
 
+
+const ProductList = ({ products }: any) => {
+  return (<>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+      {products.map((product: any) => (
+        <MyProductCard
+          key={product.id}
+          id={product.id}
+          title={product.product_name}
+          desc={product.description}
+          price={product.price}
+
+
+        />
+      ))}
+    </div>
+
+  </>
+
+  );
+};
+
+
 export default function Home() {
-  const [test, setTest] = useState(0);
+  // const [test, setTest] = useState(0);
+  const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch("http://127.0.0.1:3000/products/");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const data = await response.json();
+  //       setProducts(data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch products:", error);
+  //     }
+  //   };
+
+  //   fetchProducts();
+  // }, []);
+
+
+
+
+
+
+
+
+
 
   return (
     <main>
@@ -89,6 +140,9 @@ export default function Home() {
           />
         ))}
       </div>
+
+
+      <ProductList products={products} />;
     </main>
   );
-}
+};

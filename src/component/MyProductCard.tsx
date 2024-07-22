@@ -4,13 +4,14 @@ import CustomButton from "./button";
 import { useRouter } from "next/navigation";
 
 interface IProductCardProps {
-  title: string; //
+  id: number;
+  title: string;
   desc: string;
   price: number;
-  img: string;
+  
 }
 
-const ProductCard = ({ title, desc, price, img }: IProductCardProps) => {
+const MyProductCard = ({ id, title, desc, price }: IProductCardProps) => {
   const router = useRouter();
   return (
     <div
@@ -22,8 +23,9 @@ const ProductCard = ({ title, desc, price, img }: IProductCardProps) => {
         borderRadius: "10px",
       }}
     >
-      <Image src={img} alt={title} width={200} height={200} />
-      <h2 onClick={() => router.push(`/product/${1}`)}>{title}</h2>
+      {/* <Image src={img} alt={title} width={200} height={200} /> */}
+      {/* onClick={() => router.push(`/product/${id}`)} */}
+      <h2>{title}</h2>
       <p>{desc}</p>
       <p style={{ fontWeight: "bold", textAlign: "right" }}>{price} TL</p>
       <CustomButton />
@@ -31,4 +33,4 @@ const ProductCard = ({ title, desc, price, img }: IProductCardProps) => {
   );
 };
 
-export default ProductCard;
+export default MyProductCard;
